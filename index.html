@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A little practice goes a long way. Test your frontend fundamentals, review your answers, and beat your personal best.">
+        <meta name="theme-color" content="#f5f5ef">
+        <title>CodeMaster</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <a class="skip-link" href="#quiz-card">Skip to the quiz</a>
+        <div class="page-shell">
+            <header class="site-header">
+                <div class="brand" aria-label="CodeMaster">
+                    <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+                    <span>CodeMaster<span class="brand-dot">.</span>
+                    </span>
+                </div>
+                <span class="header-note">
+                    <span class="status-dot" aria-hidden="true"></span> A little frontend practice</span>
+            </header>
+            <main class="workspace">
+                <section class="intro" aria-labelledby="page-title">
+                    <p class="eyebrow">✳ SMALL STEPS. REAL PROGRESS. ✳</p>
+                    <h1 id="page-title">Small quiz<br>
+                        <em>Sharper skills</em>
+                    </h1>
+                    <p class="intro-description">
+                        <span id="question-total">5</span> questions to keep your frontend fundamentals fresh. Take a breath, pick an answer, and learn as you go.</p>
+                    <div class="topic-list" aria-label="Quiz topics">
+                        <span>
+                            <i class="topic-dot html-dot" aria-hidden="true"></i>HTML</span>
+                        <span>
+                            <i class="topic-dot css-dot" aria-hidden="true"></i>CSS</span>
+                        <span>
+                            <i class="topic-dot js-dot" aria-hidden="true"></i>JavaScript</span>
+                    </div>
+                    <aside class="best-card" aria-labelledby="best-label">
+                        <div class="best-card-top">
+                            <p id="best-label" class="eyebrow">YOUR PERSONAL BEST</p>
+                        </div>
+                        <p class="best-number">
+                            <span id="best-score">—</span>
+                            <span class="best-total"> / <span id="best-total">5</span>
+                            </span>
+                        </p>
+                        <p id="best-description" class="best-description">Your first finish starts the story.</p>
+                        <div class="best-card-bottom">
+                            <span class="small-dot" aria-hidden="true"></span>
+                            <span id="storage-note">Saved on this browser</span>
+                        </div>
+                    </aside>
+                    <p class="shuffle-note">
+                        <span aria-hidden="true">⇄</span> A fresh question order every round.</p>
+                </section>
+                <section id="quiz-card" class="quiz-card" aria-label="Frontend fundamentals quiz" tabindex="-1">
+                    <!-- <div class="card-heading">
+                        <span class="eyebrow">THE DAILY PRACTICE</span>
+                        <span class="level-badge">Fundamentals</span>
+                    </div> -->
+                    <section id="quiz-panel" aria-labelledby="question">
+                        <div class="progress-heading">
+                            <p id="progress">Question 1 of 5</p>
+                            <span id="question-category" class="category-label">Frontend</span>
+                        </div>
+                        <div id="progress-track" class="progress-track" role="progressbar" aria-label="Questions answered" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                        <div id="question-content">
+                            <h2 id="question" tabindex="-1"></h2>
+                            <p class="question-instruction">Choose the best answer.</p>
+                            <div id="answers" role="group" aria-labelledby="question"></div>
+                        </div>
+                        <div id="feedback-area" class="feedback-area" aria-live="polite" aria-atomic="true">
+                            <p id="feedback"></p>
+                            <p id="feedback-detail"></p>
+                        </div>
+                        <div class="quiz-actions">
+                            <span id="answer-hint" class="answer-hint">One answer. Make it count.</span>
+                            <button type="button" id="next-button" class="button button-primary" disabled>
+                                <span id="next-label">Next question</span>
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </section>
+                    <section id="results-panel" class="results-panel" aria-labelledby="result-title" hidden>
+                        <div id="record-badge" class="record-badge" hidden>New personal best</div>
+                        <div class="score-ring" aria-hidden="true">
+                            <svg viewBox="0 0 160 160" focusable="false">
+                                <circle class="ring-track" cx="80" cy="80" r="67"></circle>
+                                <circle id="ring-value" class="ring-value" cx="80" cy="80" r="67" pathLength="100"></circle>
+                            </svg>
+                            <div class="score-ring-text">
+                                <strong id="result-percent">0%</strong>
+                                <span>ACCURACY</span>
+                            </div>
+                        </div>
+                        <p class="eyebrow result-eyebrow">ROUND COMPLETE</p>
+                        <h2 id="result-title" tabindex="-1">Practice makes progress.</h2>
+                        <p id="result-summary" class="result-summary" role="status"></p>
+                        <p id="result-message" class="result-message"></p>
+                        <div class="result-stats">
+                            <span>
+                                <i class="small-dot success-dot" aria-hidden="true"></i>
+                                <strong id="correct-count">0</strong> correct</span>
+                            <span>
+                                <i class="small-dot error-dot" aria-hidden="true"></i>
+                                <strong id="incorrect-count">0</strong> to revisit</span>
+                        </div>
+                        <div class="result-actions">
+                            <button type="button" id="review-button" class="button button-secondary" aria-expanded="false" aria-controls="review-panel">Review answers</button>
+                            <button type="button" id="restart-button" class="button button-primary">Try again <span aria-hidden="true">↻</span>
+                            </button>
+                        </div>
+                        <p class="round-note">Fresh shuffle. Fresh perspective.</p>
+                    </section>
+                    <noscript>
+                        <p class="noscript-message">Please enable JavaScript to take this quiz.</p>
+                    </noscript>
+                </section>
+                <section id="review-panel" class="review-panel" aria-labelledby="review-title" hidden>
+                    <div class="review-heading">
+                        <div>
+                            <p class="eyebrow">A LITTLE REFLECTION</p>
+                            <h2 id="review-title" tabindex="-1">Every answer is a lesson.</h2>
+                        </div>
+                        <span id="review-count" class="level-badge">5 questions reviewed</span>
+                    </div>
+                    <ol id="review-list" class="review-list"></ol>
+                    <div class="review-footer">
+                        <p>Ready to put that learning to work?</p>
+                        <button type="button" id="review-restart-button" class="button button-primary">Try another round <span aria-hidden="true">↻</span>
+                        </button>
+                    </div>
+                </section>
+            </main>
+            <footer class="site-footer">
+                <span>Made for curious minds.</span>
+                <span>HTML · CSS · JavaScript</span>
+            </footer>
+        </div>
+    </body>
+</html>
